@@ -1,0 +1,197 @@
+#Strings
+#Written in''
+word='My name is shivam'
+count=0
+for i in word:
+    if i=='s':
+        count=count+1
+print(count)        
+a='My name is shivam'
+print(a[0:8])
+#even we exceed the string range, it does not generate a traceback
+#this is done by the creator to print the last element in the string         
+print(a[0:50])   
+
+# String concatenation
+a='Hello'
+b= a + 'There'
+print(b)
+c=a + ' ' + 'There'
+print(c)
+
+#using 'in' as a Logical operator
+#usually =,!=,<,> are used,but 'in' can be used as a logical operator
+#'in' is used as a logical operator for Strings
+
+word='shivam'
+#Checking in the Console e.g.'m' in word
+if 'a'in word:
+    print('Yes, a exists')
+
+#String Library-find,replace,capitalise,upper,lower,endswith,center,etc
+#str.replace,a.find,tec
+word='shivam'
+m=word.capitalize()
+n=word.upper()    
+print(m)
+print(n)
+a=word.find('h')
+print(a)
+#If the letter doesn't exist in the string, it returns -1
+#-1 indicates that the letter you are trying to find is absent
+b = word.find('x')
+print(b)
+
+rp=word.replace('m','ngi')
+print(rp)
+
+str='Jethalal Gada'
+pp=str.replace('a','u')
+print(pp)
+
+word='     Shivam      '
+a=word.lstrip()
+b=word.rstrip()
+c=word.strip() 
+print(a)
+print(b)
+print(c)
+
+a='Hello everybody!'
+a.startswith('H')
+a.startswith('h')
+
+print(len('Shivam')*100)
+
+#writing a code using find() and string slice to extract the number at the end of the line
+text = "X-DSPAM -confidence:     0.8475"
+a=text[::-1]
+b=(a[0:6])
+c=(b[::-1])
+print(c)
+d=float(c)
+e=d+1.5
+print(e)
+#another way is to find the position of colon in the string
+text = "X-DSPAM -confidence:     0.8475"
+a=text.find(':')
+print(a)
+b=text.find('5')
+print(b)
+x=int(a)
+y=int(b)
+c=text[x+1:y+1]
+print(c)
+d=c.strip()
+print(d)
+e=float(d)
+print(e)
+f=e+1.5
+print(f)
+
+
+
+b=float(a)
+print(b)
+print(a)
+print(text[::-1])
+
+#OpeningFile and printing all the text in UPPERCASE
+fname=input('enter the file name:')
+fh=open(fname)
+for line in fh:
+    line=line.upper()
+    line=line.rstrip()
+    print(line)
+
+#Finding floating average by extracting the numbers from the strings
+a=input('ENTER THE FILE NAME:')
+b=open(a)
+count=0
+j=0
+for line in b:
+            if not line.startswith('X-DSPAM-Confidence:'):continue
+            print(line)
+            count=count+1
+            c=line.find(':')
+            d=line.find('.')
+            e=int(c)
+            f=int(d)
+            g=line[e+1:f+5]
+            h=g.lstrip()
+            i=float(h)
+            j=j+i
+
+print('total count=',count)
+print('sum of all confidence values=',j)
+x=j/count
+print('Average Spam Confidence:',x)
+
+#append
+a=['Virat','Dhoni','Sachin']
+a.append('Shivam')
+print(a)
+
+'Sachin' in a
+'Rohit' in a
+'Rohit' not in a
+
+a.sort()
+print(a)
+print(a[1])
+print(len(a))
+
+#Using data structures to find the average
+a=[10,50,40,77,66,45,34,26,79]
+b=sum(a)
+s=float(b)
+c=len(a)
+d=s/c
+print('AVERAGE=',d)
+
+#for any list
+mylist=[]
+count=0
+while True:
+    a=input('Enter the number:')
+    if a=='Done':break
+    count=count+1
+    b=float(a)
+    mylist.append(b)
+total=sum(mylist)
+average=total/count
+print('AVERAGE=',average)    
+
+#Split
+a='My very educated mother just shown us nine planets'
+b=a.split()
+print(b)
+print(b[0:4])
+
+#writing a code using split()to extract the number at the end of the line
+text = "X-DSPAM -confidence:     0.8475 shivam@gmail.com"
+a=text.split()
+print(a)
+b=a[2]
+c=float(b)
+print(c)
+d=c+10
+print(d)
+e=a[3]
+print(e)
+piece=e.split('@')
+print(piece)
+print(piece[1])
+
+x=list(range(5))
+print(x)
+
+#split() and append
+#create an empty list to add the lines in it by using append
+mylist=list()
+a=input('enter the file name:')
+file=open(a)
+for line in file:
+    mylist.append(line.split())
+    mylist.sort()
+print(mylist)  
