@@ -45,10 +45,6 @@ print(b)
 rp=word.replace('m','ngi')
 print(rp)
 
-str='Jethalal Gada'
-pp=str.replace('a','u')
-print(pp)
-
 word='     Shivam      '
 a=word.lstrip()
 b=word.rstrip()
